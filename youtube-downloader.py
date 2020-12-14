@@ -1,4 +1,4 @@
-from pytube import YouTube
+# from pytube import YouTube
 
 # yt=YouTube("https://www.youtube.com/watch?v=TH3d5cyeer0")
 
@@ -9,13 +9,20 @@ from pytube import YouTube
 # dw.download("D:/")
 
 # video_links=['https://www.youtube.com/watch?v=TH3d5cyeer0','https://www.youtube.com/watch?v=wtQ_tBSrgVM']
-video_links=open("videolinks.txt","r")
-for i in video_links:
-    yt=YouTube(i)
-    try:
-        dw=yt.streams.get_by_itag(22)
-        #dw=yt.streams.first()
-        dw.download("D:/")
-        print("Video successfully downloaded")
-    except:
-        print("Download failed ",i)
+# video_links=open("videolinks.txt","r")
+# for i in video_links:
+#     yt=YouTube(i)
+#     try:
+#         dw=yt.streams.get_by_itag(22)
+#         #dw=yt.streams.first()
+#         dw.download("D:/")
+#         print("Video successfully downloaded")
+#     except:
+#         print("Download failed ",i)
+
+import pytube
+pytube.YouTube("https://www.youtube.com/watch?v=TH3d5cyeer0").streams.get_by_itag(22).download("D:/")
+
+
+#For downloading playlist
+# pytube.YouTube("https://www.youtube.com/watch?v=TH3d5cyeer0").download_all("D:/")
